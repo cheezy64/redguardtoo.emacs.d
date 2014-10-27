@@ -35,14 +35,14 @@
 ;----------------------------------------------------------------------------
 ; Load configs for specific features and modes
 ;----------------------------------------------------------------------------
-(require 'init-modeline)
+(require 'init-modeline) ;; Compact modeline
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
-(require 'cl-lib)
-(require 'init-compat)
-(require 'init-utils)
+(require 'cl-lib) ;; forward compatible library that provides newer emacs functions to older
+(require 'init-compat) ;; map cl-lib functions to older. newer packages now compat with old
+(require 'init-utils) ;; convenience functions
 (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 
 ;; win32 auto configuration, assuming that cygwin is installed at "c:/cygwin"
@@ -59,31 +59,35 @@
 
 (require 'idle-require)
 
-(require 'init-elpa)
+(require 'init-elpa) ;; install packages depending on emacs version, also logic to filter out certain packages.  TODO uncomment the filter to get the latest and greatest
 (require 'init-exec-path) ;; Set up $PATH
-(require 'init-frame-hooks)
+(require 'init-frame-hooks) ;; provide utility function to run functions after frame created
 ;; any file use flyspell should be initialized after init-spelling.el
 ;; actually, I don't know which major-mode use flyspell.
-(require 'init-spelling)
-(require 'init-xterm)
-(require 'init-osx-keys)
-(require 'init-gui-frames)
-(require 'init-ido)
-(require 'init-maxframe)
-(require 'init-proxies)
-(require 'init-dired)
-(require 'init-isearch)
-(require 'init-uniquify)
-(require 'init-ibuffer)
-(require 'init-flymake)
-(require 'init-recentf)
-(require 'init-smex)
-(if *emacs24* (require 'init-helm))
-(require 'init-hippie-expand)
-(require 'init-windows)
-(require 'init-sessions)
-(require 'init-fonts)
-(require 'init-git)
+(require 'init-spelling) ;; uses flyspell (engine aspell) on comments
+(require 'init-xterm) ;; hooks to console enabling xterm arrow keys
+(require 'init-osx-keys) ;; set meta key and M-` for frame switching
+(require 'init-gui-frames) ;; supress dialog and startup, disable toolbar and scrollbar, opacity
+;; (require 'init-ido) ;; allow recent file list M-<f11>, C-ci for imenu
+(require 'init-maxframe) ;; functions and hook to maximize frame
+(require 'init-proxies) ;; MAC only, uses external prog to get and set proxy variables
+(require 'init-dired) ;; dired interactive git, also set default program for filetypes (images, videos, etc)
+(require 'init-isearch) ;; search at cursor (TODO take), kill cursor to search
+(require 'init-uniquify) ;; Nicer naming of buffers for files with identical names
+(require 'init-ibuffer) ;; ibuffer list, grouped, and readibe size
+(require 'init-flymake) ;; fix flymake when in ruby-mode
+(require 'init-recentf) ;; fix performance of and enable recent file listing
+;; (require 'init-smex) ;; enable IDO completion for M-x
+(if *emacs24* (require 'init-helm)) ;; a lot of helm is disabled, TODO look into this!
+(require 'init-hippie-expand) ;; trys to expand text at cursor.  added function to expand tags.  i like the c mode demo more TODO
+(require 'init-windows) ;; useful split function, and WINNER mode TODO it's a nice function
+(require 'init-sessions) ;; TODO session doesn't actually seem to be loading ;FIXME: 
+(require 'init-fonts) ;; C-M-= and C-M-- increase and decrease font
+;; (require 'init-git)
+
+;;----------------------------------------------------------------------------
+;; Auto load various file types and customize
+;;----------------------------------------------------------------------------
 (require 'init-crontab)
 (require 'init-textile)
 (require 'init-markdown)
@@ -101,40 +105,40 @@
 (require 'init-elisp)
 (if *emacs24* (require 'init-yasnippet))
 ;; Use bookmark instead
-(require 'init-zencoding-mode)
-(require 'init-cc-mode)
-(require 'init-gud)
+;; (require 'init-zencoding-mode) ;; web snippets
+(require 'init-cc-mode) ;; TODO update to match multi line style that we follow
+(require 'init-gud) ;; grand unified debugger
 (require 'init-cmake-mode)
 (require 'init-csharp-mode)
-(require 'init-linum-mode)
-(require 'init-which-func)
-(require 'init-move-window-buffer)
+(require 'init-linum-mode) ;; inhibit line numbering in some modes
+(require 'init-which-func) ;; todo doesn't seem to work
+(require 'init-move-window-buffer) ;; allows you to move windows within frame
 ;; (require 'init-gist)
-(require 'init-moz)
-(require 'init-gtags)
+(require 'init-moz) ;; lazy load mozilla browser
+(require 'init-gtags) ;; functions to create tags if needed TODO bind?
 ;; use evil mode (vi key binding)
-(require 'init-evil)
-(require 'init-sh)
-(require 'init-ctags)
-(require 'init-ace-jump-mode)
-(require 'init-bbdb)
-(require 'init-gnus)
-(require 'init-lua-mode)
-(require 'init-workgroups2)
-(require 'init-term-mode)
-(require 'init-web-mode)
-(require 'init-sr-speedbar)
-(require 'init-slime)
+(require 'init-evil) ;; map certain modes evil and leader key TODO try out
+(require 'init-sh) ;; uses sh-mode for all shell related extensions
+(require 'init-ctags) ;; standard, on mac changes ctags-command
+(require 'init-ace-jump-mode) ;; bind to C-c SPC, SPC (in evil normal mode)
+;; (require 'init-bbdb) ;; email contacts integration
+;; (require 'init-gnus) ;; email and usenet reader
+(require 'init-lua-mode) ;; set safe indent levels for parsing(?)
+(require 'init-workgroups2) ;; manage windows, save sessions ;TODO: study
+(require 'init-term-mode) ;; keybinds for terminal, setting default to bash
+(require 'init-web-mode) ;; init flymake-html for web files ;TODO: study, interesting way to separate filetypes that already have modes into another subset and provide functionality
+(require 'init-sr-speedbar) ;; C-c j s/r (toggle/refresh)
+(require 'init-slime) ;; TODO dependency SBCL
 (when *emacs24* (require 'init-company))
-(require 'init-stripe-buffer)
-(require 'init-eim) ;;  cannot be idle-required
+(require 'init-stripe-buffer) ;; alternate cell bg colors for dired and org mode
+;; (require 'init-eim) ;;  cannot be idle-required, chinese input
 
 ;; color theme
 (require 'color-theme)
 (require 'color-theme-molokai)
 (color-theme-molokai)
 ;; misc has some crucial tools I need immediately
-(require 'init-misc)
+(require 'init-misc) ;; settings, customizations, grep ignore folders, lots of clutter ;TODO: 
 
 (setq idle-require-idle-delay 3)
 (setq idle-require-symbols '(init-lisp
