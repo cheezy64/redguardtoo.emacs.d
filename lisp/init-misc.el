@@ -220,11 +220,6 @@
 ;; @see https://github.com/joedicastro/dotfiles/tree/master/emacs
 (setq vc-make-backup-files nil)
 
-;; Don't disable narrowing commands
-(put 'narrow-to-region 'disabled nil)
-(put 'narrow-to-page 'disabled nil)
-(put 'narrow-to-defun 'disabled nil)
-
 (defun grep-pattern-into-list (regexp)
   (let ((s (buffer-string))
         (pos 0)
