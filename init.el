@@ -140,6 +140,11 @@
 ;; misc has some crucial tools I need immediately
 (require 'init-misc) ;; settings, customizations, grep ignore folders, lots of clutter ;TODO: 
 
+;;----------------------------------------------------------------------------
+;; MY CUSTOM SETTINGS, KEYBINDINGS, ETC
+;;----------------------------------------------------------------------------
+(require 'init-my-misc)
+
 (setq idle-require-idle-delay 3)
 (setq idle-require-symbols '(init-lisp
                              init-keyfreq
