@@ -274,6 +274,8 @@ ARCHIVE is the string name of the package archive.")
 (when *emacs24*
   (require-package 'anaconda-mode))
 (require-package 'quack) ;; for scheme
+(require-package 'helm)
+(require-package 'helm-gtags)
 
 ;; (require-package 'command-frequency)
 
