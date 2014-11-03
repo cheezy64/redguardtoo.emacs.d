@@ -1,4 +1,4 @@
 (require 'bind-key)
-(bind-key* "C-c C-u" 'universal-argument)
+(bind-key* "M-u" 'universal-argument)
 
 (provide 'init-my-misc)
