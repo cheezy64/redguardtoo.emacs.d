@@ -143,7 +143,9 @@ ARCHIVE is the string name of the package archive.")
     w3m
     fakir
     erlang
-    fancy-narrow)
+    fancy-narrow
+    helm-gtags
+    )
   "Don't install any Melpa packages except these packages")
 
 ;; Don't take Melpa versions of certain packages
@@ -156,7 +158,7 @@ ARCHIVE is the string name of the package archive.")
          )))
 
 ;; un-comment below code if you prefer use all the package on melpa (unstable) without limitation
-;; (setq package-filter-function nil)
+(setq package-filter-function nil)
 
 ;;------------------------------------------------------------------------------
 ;; Fire up package.el and ensure the following packages are installed.

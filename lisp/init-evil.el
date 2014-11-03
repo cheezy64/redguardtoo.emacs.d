@@ -13,8 +13,8 @@
 (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
 ;; }}
 
-;; Don't move back the cursor one position when exiting insert mode
-(setq evil-move-cursor-back nil)
+;; Move character back when exiting inser mode like VIM
+(setq evil-move-cursor-back t)
 
 (defun toggle-org-or-message-mode ()
   (interactive)
@@ -283,8 +283,8 @@ to replace the symbol under cursor"
   "hf" 'find-function
   "hv" 'describe-variable
   "hb" 'helm-back-to-last-point
-  "gt" 'ggtags-find-tag-dwim
-  "gr" 'ggtags-find-reference
+  "gt" 'helm-gtags-find-tag
+  "gr" 'helm-gtags-find-rtag
   "fb" 'flyspell-buffer
   "fe" 'flyspell-goto-next-error
   "fa" 'flyspell-auto-correct-word

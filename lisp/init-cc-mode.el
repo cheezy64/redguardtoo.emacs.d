@@ -105,7 +105,7 @@
 
               ;; gtags (GNU global) stuff
               (setq gtags-suggested-key-mapping t)
-              (if *emacs24* (ggtags-mode 1)))
+              (if *emacs24* (helm-gtags-mode 1)))
             (when (derived-mode-p 'c-mode 'c++-mode)
               (my-c-mode-hook))
             ))
