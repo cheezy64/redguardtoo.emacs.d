@@ -88,6 +88,9 @@
 (define-key evil-normal-state-map "+" 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map "-" 'evil-numbers/dec-at-pt)
 (define-key evil-normal-state-map "go" 'goto-char)
+;; Smart navigation of visual line if line is wrapped
+(define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+(define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
 ;; {{ evil-matchit
 (require 'evil-matchit)
@@ -302,7 +305,7 @@ to replace the symbol under cursor"
   "om" 'toggle-org-or-message-mode
   "ops" 'my-org2blog-post-subtree
   "ut" 'undo-tree-visualize
-  "al" 'align-regexp
+  ;; "al" 'align-regexp
   "ww" 'save-buffer
   "bk" 'buf-move-up
   "bj" 'buf-move-down
