@@ -159,6 +159,7 @@ to replace the symbol under cursor"
   )
 
 ;; {{ evil-leader config
+(setq evil-leader/in-all-states t)
 (setq evil-leader/leader ",")
 
 (require 'evil-leader)
@@ -283,7 +284,8 @@ to replace the symbol under cursor"
   "hf" 'find-function
   "hv" 'describe-variable
   "hb" 'helm-back-to-last-point
-  "gt" 'helm-gtags-find-tag
+  "gf" 'helm-gtags-find-tag
+  "gt" 'helm-gtags-dwim
   "gr" 'helm-gtags-find-rtag
   "fb" 'flyspell-buffer
   "fe" 'flyspell-goto-next-error
@@ -388,6 +390,14 @@ to replace the symbol under cursor"
                                  (t default-color))))
                 (set-face-background 'mode-line (car color))
                 (set-face-foreground 'mode-line (cdr color))))))
+
+;; change the cursor color depending on the mode
+(setq evil-emacs-state-cursor '("red" box))
+(setq evil-normal-state-cursor '("green" box))
+(setq evil-visual-state-cursor '("orange" box))
+(setq evil-insert-state-cursor '("red" bar))
+(setq evil-replace-state-cursor '("red" bar))
+(setq evil-operator-state-cursor '("red" hollow))
 
 ;; {{ evil-nerd-commenter
 ;; comment/uncomment lines
