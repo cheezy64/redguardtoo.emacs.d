@@ -2,7 +2,6 @@
 ;; Some basic preferences
 ;;----------------------------------------------------------------------------
 (setq-default
- blink-cursor-mode nil
  bookmark-default-file "~/.emacs.d/.bookmarks.el"
  buffers-menu-max-size 30
  case-fold-search t
@@ -19,7 +18,11 @@
  truncate-lines nil
  truncate-partial-width-windows nil
  ;; no annoying beep on errors
- visible-bell t)
+ visible-bell t
+ ;; Vim smooth scrolling
+ scroll-margin 5
+ scroll-conservatively 9999
+ scroll-step 1)
 
 (global-auto-revert-mode)
 (setq global-auto-revert-non-file-buffers t
