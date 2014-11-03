@@ -13,6 +13,7 @@
   (local-set-key (kbd "C-x C-o") 'ff-find-other-file)
   (local-set-key "\M-f" 'c-forward-into-nomenclature)
   (local-set-key "\M-b" 'c-backward-into-nomenclature)
+  (define-key c-mode-base-map [f7] 'c-reformat-buffer)
   (setq cc-search-directories '("." "/usr/include" "/usr/local/include/*" "../*/include" "$WXWIN/include"))
   (setq c-basic-offset 3)
   (setq c-style-variables-are-local-p nil)
@@ -129,6 +130,6 @@
      )
     ;; (save-buffer)
     )
-  (define-key c-mode-base-map [f7] 'c-reformat-buffer)
+
 
 (provide 'init-cc-mode)
