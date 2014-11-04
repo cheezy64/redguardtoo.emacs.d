@@ -145,6 +145,9 @@ ARCHIVE is the string name of the package archive.")
     erlang
     fancy-narrow
     helm-gtags
+    clean-aindent-mode
+    ws-butler
+    evil-args
     )
   "Don't install any Melpa packages except these packages")
 
@@ -169,7 +172,7 @@ ARCHIVE is the string name of the package archive.")
 (require-package 'cl-lib '(0 0 5) nil)
 (require-package 'kv '(0 0 19) nil)
 (require-package 'dash '(2 5 0) nil)
-; color-theme 6.6.1 in elpa is buggy
+; color-theme 6 . 6.1 in elpa is buggy
 (require-package 'color-theme)
 (require-package 'auto-compile)
 (require-package 'ace-jump-mode)
@@ -276,6 +279,9 @@ ARCHIVE is the string name of the package archive.")
 (require-package 'quack) ;; for scheme
 (require-package 'helm)
 (require-package 'helm-gtags)
+(require-package 'clean-aindent-mode)
+(require-package 'ws-butler)
+(require-package 'evil-args)
 
 ;; (require-package 'command-frequency)
 

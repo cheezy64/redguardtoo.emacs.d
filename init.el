@@ -132,6 +132,8 @@
 (when *emacs24* (require 'init-company))
 (require 'init-stripe-buffer) ;; alternate cell bg colors for dired and org mode
 ;; (require 'init-eim) ;;  cannot be idle-required, chinese input
+(require 'init-clean-aindent)
+(require 'init-ws-butler)
 
 ;; color theme
 (require 'color-theme)
