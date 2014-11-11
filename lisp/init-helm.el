@@ -198,4 +198,8 @@
 (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
 (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
 (helm-mode 1)
+
+(require 'helm-descbinds)
+(helm-descbinds-mode)
+
 (provide 'init-helm)
