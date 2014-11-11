@@ -117,4 +117,32 @@
               emacs-lisp "lisp"))
 ;; }}
 
+;; {{ http://members.optusnet.com.au/~charles57/GTD/datetree.html
+(setq org-default-notes-file "~/notes.org")
+(global-set-key (kbd "C-c r") 'org-capture)
+(setq org-capture-templates
+   (quote (
+       ("a" "Appointment" entry (file+headline
+                    "~/GTD/taskdiary.org" "Calendar")
+        "* APPT %^{Description} %^g
+%?
+Added: %U")
+       ("n" "Notes" entry (file+datetree
+                 "~/GTD/taskdiary.org")
+        "* %^{Description} %^g %?
+Added: %U")
+       ("t" "Task Diary" entry (file+datetree
+                    "~/GTD/taskdiary.org")
+        "* TODO %^{Description} %^g
+%?
+Added: %U")
+       ("j" "Journal" entry (file+datetree
+                  "~/GTD/workjournal.org")
+        "** %^{Heading}")
+       ("l" "Log Time" entry (file+datetree
+                   "~/GTD/timelog.org" )
+        "** %U - %^{Activity} :TIME:")
+       )))
+;; }}
+
 (provide 'init-org)
