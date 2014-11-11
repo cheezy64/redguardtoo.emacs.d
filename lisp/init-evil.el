@@ -422,4 +422,9 @@ to replace the symbol under cursor"
 ;; bind evil-jump-out-args
 (define-key evil-normal-state-map "K" 'evil-jump-out-args)
 
+;; {{ evil-search-highlight-persist
+(require 'evil-search-highlight-persist)
+(global-evil-search-highlight-persist t)
+;; }}
+
 (provide 'init-evil)

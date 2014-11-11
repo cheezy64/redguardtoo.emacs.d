@@ -145,9 +145,11 @@ ARCHIVE is the string name of the package archive.")
     erlang
     fancy-narrow
     helm-gtags
+    helm-descbinds
     clean-aindent-mode
     ws-butler
     evil-args
+    evil-search-highlight-persist
     )
   "Don't install any Melpa packages except these packages")
 
@@ -279,9 +281,12 @@ ARCHIVE is the string name of the package archive.")
 (require-package 'quack) ;; for scheme
 (require-package 'helm)
 (require-package 'helm-gtags)
+(require-package 'helm-descbinds)
 (require-package 'clean-aindent-mode)
 (require-package 'ws-butler)
 (require-package 'evil-args)
+(require-package 'evil-search-highlight-persist)
+
 
 ;; (require-package 'command-frequency)
 
